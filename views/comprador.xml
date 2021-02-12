@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<odoo>
+    <data>
+        
+        <record id="viniloteca_comprador_view_form" model="ir.ui.view">
+            <field name="name">viniloteca.comprador.form</field>
+            <field name="model">viniloteca.comprador</field>
+            <field name="arch" type="xml">
+                <form string="Comprador">
+                    <sheet>
+
+                        <header>
+                            <button name="limpiar_todo" type="object" string="Borrar datos" class="oe_highlight" />
+                        </header>
+
+                        
+                        <group>
+                            <field name="id" />
+                            <field name="dni" />
+                            <field name="nombre" />
+                            <field name="apellidos" />
+                            <field name="telefono" />
+                            <field name="direccion" />
+
+                        </group>
+                        
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        
+        <record id="viniloteca_comprador_tree" model="ir.ui.view">
+            <field name="name">viniloteca.comprador.tree</field>
+            <field name="model">viniloteca.comprador</field>
+            <field name="arch" type="xml">
+                <tree string="Comprador">
+                    <field name="id" />
+                    <field name="dni" />
+                    <field name="nombre" />
+                    <field name="apellidos" />
+                    <field name="telefono" />
+                    <field name="direccion" />
+                </tree>
+            </field>
+        </record>
+
+        
+        <record id="viniloteca_comprador_action" model="ir.actions.act_window">
+            <field name="name">Cliente</field>
+            <field name="res_model">viniloteca.comprador</field>
+            <field name="view_type">form</field>
+            <field name="view_model">tree,form</field>
+            <field name="help" type="html">
+                <p class="oe_view_nocontent_create">Crea un nuevo cliente</p>
+            </field>
+        </record>
+
+
+       
+        <record id="view_comprador_search" model="ir.ui.view">
+                <field name="name">Buscar</field>
+                <field name="model">viniloteca.comprador</field>
+                <field name="arch" type="xml">
+                    <search>
+                        <field name="id" />
+                        <field name="dni" />
+                        <field name="nombre" />
+                        <field name="apellidos" />
+                        <field name="telefono" />
+                        <field name="direccion" />
+                    </search>
+                </field>
+        </record>
+
+        
+       
+
+        
+        <menuitem name="Comprador" id="menu_comprador" action="viniloteca_comprador_action" parent="menu_inicio"/>
+    </data>
+</odoo>

@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+
+<odoo>
+    <data>
+        <act_window id="viniloteca_tienda_action"  name="Tienda"
+            res_model="viniloteca.tienda"/>
+
+        <record id="viniloteca_tienda_view_tree" model="ir.ui.view">
+            <field name="name">Tienda</field>
+            <field name="model">viniloteca.tienda</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="id"/>
+                    <field name="nombre"/>
+                    <field name="direccion"/>
+                    <field name="telefono"/>
+                    <field name="dependiente"/>
+                    <field name="sello"/>
+
+                                   
+                </tree>
+            </field>
+        </record>
+
+        <record id="viniloteca_tienda_form" model="ir.ui.view">
+            <field name="name">viniloteca.tienda.form</field>
+            <field name="model">viniloteca.tienda</field>
+            <field name="arch" type="xml">
+                <form string="Tienda">
+                    <sheet>
+
+                        <header>
+                            <button name="borrar_datos" type="object" string="Borrar datos" class="oe_highlight" />
+                        </header>
+
+                        
+                        <group>
+                            <field name="id"/>
+                            <field name="nombre"/>
+                            <field name="direccion"/>
+                            <field name="telefono"/>
+                            <field name="dependiente"/>
+                            <field name="sello"/>
+                        </group>
+                        
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+
+        <record id="viniloteca_tienda_view_search" model="ir.ui.view">
+            <field name="name"> Buscar</field>
+            <field name="model">viniloteca.tienda</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="id"/>
+                    <field name="nombre"/>
+                    <field name="direccion"/>
+                    <field name="telefono"/>
+                    <field name="dependiente"/>
+                    <field name="sello"/>
+                </tree>
+            </field>
+        </record>
+
+        
+         
+      
+        <menuitem name="Viniloteca" id="menu_viniloteca" sequence="10"/>
+        <menuitem name="Tiendas" id="menu_tiendas" parent="menu_viniloteca"/>
+        <menuitem name="Tienda" id="menu_tienda" action="viniloteca_tienda_action" parent="menu_tiendas"/>
+        <menuitem name="Clientes" id="menu_inicio" parent="menu_viniloteca"/>
+
+
+    </data>
+</odoo>

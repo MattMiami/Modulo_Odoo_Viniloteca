@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<odoo>
+    <data>
+        
+        <record id="viniloteca_dependiente_view_form" model="ir.ui.view">
+            <field name="name">viniloteca.dependiente.form</field>
+            <field name="model">viniloteca.dependiente</field>
+            <field name="arch" type="xml">
+                <form string="Dependiente">
+                    <sheet>
+
+                        <header>
+                            <button name="borrar_datos" type="object" string="Borrar datos" class="oe_highlight" />
+                        </header>
+
+                        
+                        <group>
+                            <field name="id" />
+                            <field name="dni" />
+                            <field name="nombre" />
+                            <field name="apellidos" />
+                            <field name="fecha" />
+                            <field name="comprador" />
+                        </group>
+                        
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        
+        <record id="viniloteca_dependiente_tree" model="ir.ui.view">
+            <field name="name">viniloteca.dependiente.tree</field>
+            <field name="model">viniloteca.dependiente</field>
+            <field name="arch" type="xml">
+                <tree string="Dependiente">
+                    <field name="id" />
+                    <field name="dni" />
+                    <field name="nombre" />
+                    <field name="apellidos" />
+                    <field name="comprador" />
+                </tree>
+            </field>
+        </record>
+
+        
+        <record id="viniloteca_dependiente_action" model="ir.actions.act_window">
+            <field name="name">Dependiente</field>
+            <field name="res_model">viniloteca.dependiente</field>
+            <field name="view_type">form</field>
+            <field name="view_model">tree,form</field>
+            <field name="help" type="html">
+                <p class="oe_view_nocontent_create">Crea un nuevo dependiente</p>
+            </field>
+        </record>
+
+
+       
+        <record id="viniloteca_dependiente_search" model="ir.ui.view">
+                <field name="name">Buscar</field>
+                <field name="model">viniloteca.dependiente</field>
+                <field name="arch" type="xml">
+                    <search>
+                        <field name="id" />
+                        <field name="dni" />
+                        <field name="nombre" />
+                        <field name="apellidos" />
+                        <field name="fecha" />
+                        <field name="comprador" />
+                        <field name="tienda"/>
+                    </search>
+                </field>
+        </record>
+
+        
+        <menuitem name="Dependientes" id="menu_dependiente" action="viniloteca_dependiente_action" parent="menu_tienda"/>
+    </data>
+</odoo>

@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<odoo>
+    <data>
+        
+        <record id="viniloteca_vinilo_view_form" model="ir.ui.view">
+            <field name="name">viniloteca.vinilo.form</field>
+            <field name="model">viniloteca.vinilo</field>
+            <field name="arch" type="xml">
+                <form string="Vinilo">
+                    <sheet>
+
+                        <header>
+                            <button name="borrar_datos" type="object" string="Borrar datos" class="oe_highlight" />
+                        </header>
+
+                        
+                        <group>
+                            <field name="id"/>
+                            <field name="nombre" />
+                            <field name="genero" />
+                            <field name="fecha" />
+                            <field name="precio" />
+                        </group>
+                        
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        
+        <record id="viniloteca_vinilo_tree" model="ir.ui.view">
+            <field name="name">viniloteca.vinilo.tree</field>
+            <field name="model">viniloteca.vinilo</field>
+            <field name="arch" type="xml">
+                <tree string="Vinilo">
+                    <field name="id"/>
+                    <field name="nombre" />
+                    <field name="genero" />
+                    <field name="fecha" />
+                    <field name="precio" />
+                </tree>
+            </field>
+        </record>
+
+        
+        <record id="viniloteca_vinilo_action" model="ir.actions.act_window">
+            <field name="name">Vinilo</field>
+            <field name="res_model">viniloteca.vinilo</field>
+            <field name="view_type">form</field>
+            <field name="view_model">tree,form</field>
+            <field name="help" type="html">
+                <p class="oe_view_nocontent_create">Añadir un disco de vinilo</p>
+            </field>
+        </record>
+
+
+       
+        <record id="viniloteca_sello_search" model="ir.ui.view">
+                <field name="name">Buscar</field>
+                <field name="model">viniloteca.vinilo</field>
+                <field name="arch" type="xml">
+                    <search>
+                        <field name="id"/>
+                        <field name="nombre" />
+                        <field name="genero" />
+                        <field name="fecha" />
+                        <field name="precio" />
+                    </search>
+                </field>
+        </record>
+
+        
+        <menuitem name="Discos de Vinilo" id="menu_vinilo" action="viniloteca_vinilo_action" parent="menu_sello"/>
+    </data>
+</odoo>
